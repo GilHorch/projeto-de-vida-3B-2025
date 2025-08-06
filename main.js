@@ -40,27 +40,16 @@ function calculaTempo(tempoObjetivo) {
     else{return [0,0,0,0];}
 }
 
-function atualizaCronometro() {
+ffunction atualizaCronometro(){
+    document.getElementById("dias0").textContent = calculaTempo(tempos[0])[0];
+    document.getElementById("horas0").textContent = calculaTempo(tempos[0])[1];
+    document.getElementById("min0").textContent = calculaTempo(tempos[0])[2];
+    document.getElementById("seg0").textContent = calculaTempo(tempos[0])[3];
 
-
-    for (let i = 0; i < contadores.length; i++) {
-       //contadores[i].textContent = calculaTempo(tempos[i]);
-
-document.getElementById("dias"+i).textContent=calculaTempo(tempos[i])[3];
- console.log("dias"+i);
-
-document.getElementById("horas"+i).textContent=calculaTempo(tempos[i])[3];
- console.log("horas"+i);
-
-document.getElementById("min"+i).textContent=calculaTempo(tempos[i])[3];
- console.log("min"+i);
-
- document.getElementById("seg"+i).textContent=calculaTempo(tempos[i])[3];
- console.log("seg"+i);
-
+    for (let i=0; i<contadores.length;i++){
+       // contadores[i].textContent = calculaTempo(tempos[i]);   
     }
 }
-
 function comecaCronometro(){
 atualizaCronometro();
 setInterval(atualizaCronometro,1000);
